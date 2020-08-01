@@ -1,0 +1,36 @@
+class Solution {
+public:
+    bool detectCapitalUse(string word) {
+        int cap=0, small=0, mid=0;
+        int len= word.length();
+        for(int i=0; i<=word.length(); i++)
+        {
+            if(isupper(word[i])) 
+            {
+                cap++;
+            }
+        }
+        for(int i=0; i<=word.length(); i++)
+        {
+            if(islower(word[i])) 
+            {
+                small++;
+            }
+        }
+        if(isupper(word[0]))
+        {
+            for (int i=1; i<=word.length(); i++)
+            {
+                if(islower(word[i])) 
+                    mid++;
+            }
+        }
+        if(cap==len || small==len || mid==(len-1)) {
+            return true;
+        }
+        else 
+            return false;
+    
+        
+    }
+};
