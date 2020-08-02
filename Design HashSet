@@ -1,0 +1,172 @@
+class MyHashSet {
+    int numBuckets;
+    vector<ector<int>> buckets;   //a vector of lists
+    
+    int hash_func (int key)    //defining the hash function
+    {
+        return (key % numBuckets);
+    }
+public:
+    /** Initialize your data structure here. */
+    MyHashSet() {
+        numBuckets = 12000;  //max 10000 operations at a time
+        buckets = vector<vector<int>>(numBuckets, vector<int> {} );  //initialising the ds
+        
+    }
+    
+    void add(int key) {
+        int i = hash_func(key);
+        if(find(buckets[i].begin(), buckets[i].end(),key) == buckets[i].end()) //if not found, add
+            buckets[i].push_back(key);
+        
+    }
+    
+    void remove(int key) {
+        int i = hash_func(key);
+        auto ans = find(buckets[i].begin(), buckets[i].end(),key);
+        if(ans != buckets[i].end())
+            buckets[i].erase(ans);
+        
+    }
+    
+    /** Returns true if this set contains the specified element */
+    bool contains(int key) {
+        int i = hash_func(key);
+        if(find(buckets[i].begin(), buckets[i].end(),key) == buckets[i].end()) //if not found, true
+            return false;
+        return true;
+        }
+};
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet* obj = new MyHashSet();
+ * obj->add(key);
+ * obj->remove(key);
+ * bool param_3 = obj->contains(key);
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+class MyHashSet {
+    int numBuckets;
+    vector<list<int>> buckets;   //a vector of lists
+    
+    int hash_func (int key)    //defining the hash function
+    {
+        return (key % numBuckets);
+    }
+public:
+    /** Initialize your data structure here. */
+    MyHashSet() {
+        numBuckets = 12000;  //max 10000 operations at a time
+        buckets = vector<list<int>>(numBuckets, list<int> {} );  //a vector of empty lists
+        
+    }
+    
+    void add(int key) {
+        int i = hash_func(key);
+        if(find(buckets[i].begin(), buckets[i].end(),key) == buckets[i].end()) //if not found, add
+            buckets[i].push_back(key);
+        
+    }
+    
+    void remove(int key) {
+        int i = hash_func(key);
+        auto ans = find(buckets[i].begin(), buckets[i].end(),key);
+        if(ans != buckets[i].end())
+            buckets[i].erase(ans);
+        
+    }
+    
+    /** Returns true if this set contains the specified element */
+    bool contains(int key) {
+        int i = hash_func(key);
+        if(find(buckets[i].begin(), buckets[i].end(),key) == buckets[i].end()) //if not found, true
+            return false;
+        return true;
+        }
+};
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet* obj = new MyHashSet();
+ * obj->add(key);
+ * obj->remove(key);
+ * bool param_3 = obj->contains(key);
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
